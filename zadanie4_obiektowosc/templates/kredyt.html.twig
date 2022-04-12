@@ -22,7 +22,7 @@
 
     <br/>
 
-    {% if msgs.isErrors() %}
+    {% if msgs.isError() %}
         <div class="alert alert-warning">
             <ol>
                 {% for msg in msgs.getErrors() %}
@@ -32,7 +32,7 @@
         </div>
     {% endif %}
 
-    {% if msgs.isInfos() %}
+    {% if msgs.isInfo() %}
         <div class="alert alert-info">
             <ol>
                 {% for msg in msgs.getInfos() %}
