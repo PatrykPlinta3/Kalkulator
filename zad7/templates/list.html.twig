@@ -1,0 +1,46 @@
+{% extends 'page.html.twig' %}
+
+
+
+
+{% block title %}Kalkulator kredytowy{% endblock %}
+
+{% block content %}
+
+
+    <table id="tab_people" class="pure-table pure-table-bordered">
+        <thead>
+        <tr>
+            <th>kwota</th>
+            <th>termin</th>
+            <th>oprocentowanie</th>
+            <th>wynik</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for p in list %}
+        <tr>
+            <td>{{p["kwota"]}}</td>
+            <td>{{p["termin"]}}</td>
+            <td>{{p["oprocentowanie"]}}</td>
+            <td>{{p["wynik"]}}</td>
+        </tr>
+            {% endfor %}
+
+{#        {foreach $list as $p}#}
+{#            {strip}#}
+{#                <tr>#}
+{#                    <td>{$p["kwota"]}</td>#}
+{#                    <td>{$p["termin"]}</td>#}
+{#                    <td>{$p["oprocentowanie"]}</td>#}
+{#                    <td>{$p["wynik"]}</td>#}
+
+{#                </tr>#}
+{#            {/strip}#}
+{#        {/foreach}#}
+
+
+        </tbody>
+    </table>
+    <a href="{{ conf.action_root }}calcShow" class="btn btn-primary mt-2 mb-2 ">Wróć</a>
+{% endblock %}
